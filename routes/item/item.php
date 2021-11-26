@@ -35,11 +35,18 @@ Route::group(
                 Route::delete('/delete/{item}', 'ItemController@destroy')
                     ->where('item', $idPattern)
                     ->name('item.delete');
-
-                Route::get('/status/{item}', 'ItemController@status')
-                    ->where('item', $idPattern)
-                    ->name('item.status');
             }
         );
+    }
+);
+
+Route::prefix('item')->group(
+    function () {
+
+        $idPattern = '[1-9][0-9]{0,9}';
+
+        Route::get('/status/{item}', 'ItemController@status')
+            ->where('item', $idPattern)
+            ->name('item.status');
     }
 );
