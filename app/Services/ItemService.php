@@ -16,17 +16,20 @@ class ItemService
         $this->itemRepository = $itemRepository;
     }
 
-    public function add($data)
+    /**
+     * @param array $data
+     */
+    public function add(array $data)
     {
         return $this->itemRepository->add($data);
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     * @param array $data
      * @param  \App\Models\Item  $item
      */
-    public function update($data, Item $item)
+    public function update(array $data, Item $item)
     {
         return $this->itemRepository->update($data, $item);
     }
@@ -48,10 +51,10 @@ class ItemService
 
     /**
      * Update the status resource in storage.
-     *
+     * @param bool $done
      * @param  \App\Models\Item  $item
      */
-    public function statusUpdate($done, Item $item)
+    public function statusUpdate(bool $done, Item $item)
     {
         $this->itemRepository->statusUpdate($done, $item);
     }

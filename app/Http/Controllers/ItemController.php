@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Services\ItemService;
 use App\Http\Requests\ItemRequest;
 use App\Http\Requests\ItemUpdateRequest;
+use Illuminate\Http\JsonResponse;
 
 class ItemController extends Controller
 {
@@ -128,7 +129,7 @@ class ItemController extends Controller
      * @param  Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function status(Request $request, Item $item)
+    public function status(Request $request, Item $item): JsonResponse
     {
         if ($request->ajax()) {
             if ($request->has('done')) {

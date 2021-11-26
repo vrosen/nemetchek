@@ -31,10 +31,10 @@ class ItemRepository extends BaseRepository
 
     /**
      * Update the specified resource in storage.
-     *
+     * @param array $data
      * @param  \App\Models\Item  $item
      */
-    public function update($data, Item $item)
+    public function update(array $data, Item $item)
     {
         $item->name = $data['name'];
         $item->description = $data['description'];
@@ -58,10 +58,10 @@ class ItemRepository extends BaseRepository
 
     /**
      * Update the status resource in storage.
-     *
+     * @param bool $done
      * @param  \App\Models\Item  $item
      */
-    public function statusUpdate($done, Item $item)
+    public function statusUpdate(bool $done, Item $item)
     {
         $item->done = $done;
         $item->save();
