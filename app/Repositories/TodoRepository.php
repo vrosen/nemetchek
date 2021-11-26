@@ -31,6 +31,5 @@ class TodoRepository extends BaseRepository
     public function getAll()
     {
         return Todo::where('user_id', Auth::user()->id)->paginate(5);
-       // return Lesson::where(['user_id' => $id])->with('category','topic','creator')->get();
     }
 }
