@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory(2)->has(
-            Todo::factory(3)
-                ->has(Item::factory(10))
+            Todo::factory(10)
+                ->has(Item::factory(20))
         )->create();
     }
 }
