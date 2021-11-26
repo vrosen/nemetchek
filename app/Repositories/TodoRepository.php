@@ -30,6 +30,6 @@ class TodoRepository extends BaseRepository
 
     public function getAll()
     {
-        return Todo::where('user_id', Auth::user()->id)->paginate(5);
+        return Todo::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(5);
     }
 }
