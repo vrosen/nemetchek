@@ -43,7 +43,7 @@ class Item extends Model
         return $this->belongsTo(Todo::class, 'todo_id', 'id');
     }
 
-        /**
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
